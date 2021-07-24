@@ -1,0 +1,35 @@
+//This is a Kth largest element in an array problem
+
+//Given an integer array nums and an integer k, return the kth largest element in the array.
+//Note that it is the kth largest element in the sorted order, not the kth distinct element.
+
+//Understand:
+//For an empty array: return Infinity
+//Assume the inputs are always going to be integer
+//Return an integer 
+//Don't worry about the complexities for now
+//If k is larger than length of array, return infinity
+//If k is negative or zero, also return Infinity
+//Assume there is no duplicate
+
+//Test Cases
+//[0], k=0 --> Return Infinity
+//[9,5,3], k=4 --> Return Infinity
+//[8,3,2,7,5,4,1], k=6 --> Return 7
+
+
+//Match
+//We could think of a brute force like just using the in-built sort function and then loop through the entire array
+//which would be O(n logn) + O(n)--> O(n Logn), We could start with this and build up.
+//Quick Sort is a better solution but with a variety, almost like binary search with partitions
+
+//Explanation
+//We would pick a the last element as our pivot and then partition it. 
+//Also have first and last pointer, loop and compare, increment first pointer only when that element is less than pivot
+//Decrement last pointer when the last pointer is greater than the pivot
+
+Pseudocode
+//Have a while loop while i is less than j
+//set the last element as pivot and set the first and last element as i and j respectively
+//Increment i while arr[i]<pivot then decrement j while arr[j]>pivot
+//Then swap arr[i] and arr[j]
